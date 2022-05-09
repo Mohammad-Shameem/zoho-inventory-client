@@ -6,7 +6,7 @@ const PageTitle = ({ title }) => {
         <Helmet>
             <title>{title}-ZOHO INVENTORY</title>
         </Helmet>
-        // 
+
     );
 };
 
