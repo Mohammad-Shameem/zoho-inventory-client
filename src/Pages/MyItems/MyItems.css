@@ -1,0 +1,19 @@
+.my-item-div {
+    width: 100%;
+}
+
+.page-btn {
+
+    border: none;
+    padding: 5px 12px;
+    margin-left: 10px;
+
+}
+
+.onpage {
+    background-color: #A7C7E7;
+    border: 2px solid #A7C7E7;
+    border: none;
+    padding: 5px 12px;
+    margin-left: 10px;
+}

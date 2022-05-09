@@ -1,0 +1,32 @@
+.footer {
+    position: static;
+    top: 100%;
+    width: 100%;
+    height: 230px;
+    /* Height of the footer */
+    background: #6cf;
+    /* background-color: #A7C7E7; */
+}
+
+.footer-line-div {
+    height: 2px;
+    background-color: #0B0B45;
+    width: 120px;
+}
+
+
+
+.icons font {
+    color: #FFFF;
+
+}
+
+.icon {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.copyright {
+    margin-top: 95px;
+    bottom: 0px;
+}

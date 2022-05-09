@@ -1,0 +1,28 @@
+.navbar {
+    background-color: #6cf;
+
+
+}
+
+.navbar {
+    font-weight: 600;
+    /*  color: #FFFF; */
+}
+
+.signout-btn {
+    background-color: #FFFF;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.signout-btn:hover {
+    background-color: #0B0B45;
+    color: #FFFF;
+}
+
+.all-links a {
+    text-decoration: none;
+    color: black;
+}

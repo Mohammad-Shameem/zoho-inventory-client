@@ -1,0 +1,16 @@
+.categorie {
+    width: 90%;
+    margin: 0px auto;
+}
+
+.categorie h5,
+p {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.slider img {
+    border-radius: 50px;
+    padding: 5px;
+    box-shadow: 5px 5px 5px #A7C7E7;
+}

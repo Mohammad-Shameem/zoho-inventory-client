@@ -1,0 +1,24 @@
+.updateItem-container h5,
+p {
+    text-align: center;
+}
+
+.updateItem-container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.restock-items-field {
+    margin-top: 18px;
+    width: 50%;
+    padding: 8px;
+    border: none;
+    box-shadow: 5px 5px 5px #A7C7E7;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}

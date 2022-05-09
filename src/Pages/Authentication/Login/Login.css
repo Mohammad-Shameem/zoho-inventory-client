@@ -1,0 +1,28 @@
+.login-form a {
+    text-decoration: none;
+
+}
+
+.button {
+    background-color: #A7C7E7;
+    width: 200px;
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: #FFFF;
+    box-shadow: 5px 5px 5px gray;
+}
+
+
+
+.input-field {
+    border: none;
+    box-shadow: 5px 5px 5px #A7C7E7;
+}
+
+.reset-text {
+    cursor: pointer;
+}

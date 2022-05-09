@@ -1,0 +1,23 @@
+.wellcome {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../../../images/wellcome/112854358-aerial-view-of-warehouse-storages-or-industrial-factory-or-lo.webp);
+}
+
+.wellcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFF;
+}
+
+.heading {
+    color: #A7C7E7;
+    margin-bottom: 15px;
+}
+
+.connect-btn {
+    color: black;
+}

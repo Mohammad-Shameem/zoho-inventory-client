@@ -1,0 +1,24 @@
+.item-details p,
+h5,
+h6 {
+    text-align: left;
+
+}
+
+.update-btn {
+    background-color: #FFFF;
+    border: 3px solid #A7C7E7;
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-size: 17px;
+}
+
+.update-btn:hover {
+    background-color: #A7C7E7;
+    font-weight: 600;
+}
+
+.item-container {
+    overflow: hidden;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)); */
+}
