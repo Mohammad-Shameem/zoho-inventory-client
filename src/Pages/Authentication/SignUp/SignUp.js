@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import zoho from '../../../images/logo/header-img.png'
 import './SIgnUp.css'
+import useToken from '../../Hooks/useToken';
 
 
 const SignUp = () => {
@@ -22,6 +23,8 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [token] = useToken(user)
+
     const nameRef = useRef('');
     const ageRef = useRef('');
     const emailRef = useRef('');
@@ -34,15 +37,24 @@ const SignUp = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const confirmPassword = confirmPasswordRef.current.value;
+        if (/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)) {
 
-        if (password === confirmPassword) {
-            await createUserWithEmailAndPassword(email, password)
+            if (password === confirmPassword) {
+                await createUserWithEmailAndPassword(email, password)
+            }
+            else {
+                toast.warn("your password didn't match", {
+                    position: "top-center"
+                })
+
+            };
         }
         else {
-            toast.warn("your password didn't match", {
-                position: "top-center"
+            toast.error("your passowrd must be min 8 letter password, with at least a symbol, upper and lower case letters and a number", {
+                position: 'top-center'
             })
-        };
+        }
+
 
     };
 
@@ -57,7 +69,9 @@ const SignUp = () => {
 
     const handleClose = () => {
         setShow(false);
-        navigate('/home')
+        if (token) {
+            navigate('/home')
+        }
     }
     const handleShow = () => setShow(true);
     if (user) {
@@ -78,6 +92,7 @@ const SignUp = () => {
                 <input className='signup-input-field' type="number" name="Phone" placeholder='phone (optional)' /> <br />
                 <input ref={emailRef} className='signup-input-field' type="email" name="email" required placeholder='email' /> <br />
                 <input ref={passwordRef} className='signup-input-field' type="password" name="password" required placeholder='password' /><br />
+                <p>your passowrd must be min 8 letter password, with at least a symbol, <br /> upper and lower case letters and a number</p>
                 <input ref={confirmPasswordRef} className='signup-input-field' type="password" name="password" required placeholder='confirm password' /><br />
                 <p>Already have an Account? <span  > <Link to="/login">click for Login</Link> </span></p>
                 <div className='d-flex justify-content-center align-items-center'>

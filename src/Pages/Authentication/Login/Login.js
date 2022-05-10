@@ -12,6 +12,7 @@ import PageTitle from '../../SharedPages/PageTitle/PageTitle';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import zoho from '../../../images/logo/header-img.png';
 import './Login.css'
+import useToken from '../../Hooks/useToken';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -29,14 +30,14 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(user)
     const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
     const handleLogin = async (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password)
-        const { data } = await axios.post('https://arcane-caverns-12434.herokuapp.com/gettoken', { email })
-        localStorage.setItem("aceesstoken", data.accessToken)
+
     };
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
@@ -49,7 +50,7 @@ const Login = () => {
             position: "top-center"
         })
     };
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     };
 

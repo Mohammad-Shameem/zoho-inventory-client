@@ -8,15 +8,20 @@ import './SocialLogin.css'
 import { toast } from 'react-toastify';
 
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../Hooks/useToken';
 
 const SocialLogin = () => {
-    const navigate = useNavigate();
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const navigate = useNavigate();
+    const [token] = useToken(user);
+    console.log(user)
 
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
     if (user) {
-        navigate(from, { replace: true });
+        if (token) {
+            navigate(from, { replace: true });
+        }
 
     }
 

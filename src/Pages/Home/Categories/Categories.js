@@ -19,7 +19,7 @@ const Categories = () => {
     return (
         <div className='mb-5'>
 
-            <h2 className='mb-5'>Upcoming Itmes Category</h2>
+            <h2 className='mb-5'>Upcoming Items Category</h2>
             <div className=' mb-5 categorie' style={{ marginBottom: "50%" }}>
                 <Swiper
                     modules={[Navigation, Pagination, EffectCoverflow, Virtual

@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# ZOHO-INVENTORY 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# check out the project
+project link:- https://zoho-inventory-40590.web.app/
+
+# project summery
+* An Automated Inventory System
+* Build up by React.
+* Bootstrap and core css used for responsive and design.
+* swiper used for slider.
+* Authentication method build with Firebase authentication system.
+* Authentication build up by firebase hooks.
+* Authentication with email,password and google only,Facebook and Github Authentication will be add soon.
+* Data secured By JWT
+
 
 ## Available Scripts
 
