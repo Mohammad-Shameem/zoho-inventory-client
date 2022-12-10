@@ -1,53 +1,86 @@
-import React from 'react';
-import { Carousel } from 'react-bootstrap';
-import gearImage1 from "../../../images/banner/outdoor-gears1.jpg"
-import gearImage2 from "../../../images/banner/outdoor-ger2.jpg"
-import gearImage3 from "../../../images/banner/oudoor-gear3.jpg"
-import './Banner.css'
+import React, { useRef } from "react";
+import { animate, motion } from "framer-motion";
+
+import "./Banner.css";
 
 const Banner = () => {
+  const clientCounter = useRef();
+  const projectsCounter = useRef();
+  const UpcomingProductCounter = useRef();
+  const animationClientsCount = () => {
+    animate(0, 40000, {
+      duration: 2,
+      onUpdate: (v) => {
+        clientCounter.current.textContent = v.toFixed();
+      },
+    });
+  };
+  const animateProjectsCounter = () => {
+    animate(0, 1000, {
+      duration: 2,
+      onUpdate: (v) => {
+        projectsCounter.current.textContent = v.toFixed();
+      },
+    });
+  };
+  const animateUpcomingProductCounter = () => {
+    animate(0, 400, {
+      duration: 2,
+      onUpdate: (v) => {
+        UpcomingProductCounter.current.textContent = v.toFixed();
+      },
+    });
+  };
+  const TestimonialCard = ({ name, feedback, counter, animateCounter }) => {
     return (
-        <div className='banner mt-5'>
-            <h2 className='mt-3 mb-5'>UNLIMITED STOCK</h2>
-            <Carousel fade>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={gearImage1}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>Zoho Inventory</h3>
-                        <p>Inventory of Camping Gears And Partner of all Outdoor Camping Lover</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={gearImage2}
-                        alt="Second slide"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Zoho Inventory</h3>
-                        <p>Zoho stores raw materials used to produce goods as well as the goods that are available for sale.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={gearImage3}
-                        alt="Third slide"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Zoho Inventory</h3>
-                        <p>Zoho Inventory is Automated inventory management. </p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </div>
+      <article className="section-article">
+        <span className="section-span">
+          <p className="numbers">
+            +{" "}
+            <motion.span
+              ref={counter}
+              whileInView={animateCounter}
+            ></motion.span>
+          </p>
+        </span>
+        <h4>{name}</h4>
+        <p className="feedback">{feedback}</p>
+      </article>
     );
+  };
+  return (
+    <div className="banner mt-5">
+      <h2 className="mt-3 mb-5 testimonial-title">WHAT WE ARE</h2>
+      <div id="testimonial">
+        <section className="testimonial-section">
+          <TestimonialCard
+            name={" Products"}
+            feedback={
+              "We are working with thousand proudcts. But in future  IN SHA ALLAH we will add more thousands products. So you can get everything you need from us. Just keep in touch."
+            }
+            counter={projectsCounter}
+            animateCounter={animateProjectsCounter}
+          ></TestimonialCard>
+          <TestimonialCard
+            counter={clientCounter}
+            animateCounter={animationClientsCount}
+            name={"Customer"}
+            feedback={
+              "We are have lots of happy customer. They are happy with our services. We are working to show our happy customers and their speech about our services in our website."
+            }
+          ></TestimonialCard>
+          <TestimonialCard
+            name={" Up Coming Product"}
+            feedback={
+              "We are dealing with some company get their qualityful product. And you will get all product you need Good morning to Good Night. We are working for you. "
+            }
+            counter={UpcomingProductCounter}
+            animateCounter={animateUpcomingProductCounter}
+          ></TestimonialCard>
+        </section>
+      </div>
+    </div>
+  );
 };
 
 export default Banner;
